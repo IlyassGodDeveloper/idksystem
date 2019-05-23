@@ -53,7 +53,7 @@ if (message.content.startsWith(prefix + 'setgame')) {
 client.on('message', message => {
   var mention = message.mentions.members.first();
    var chan = message.member.voiceChannel;
-	var chan2 = mention.voiceChannel;
+	
 	
   if (message.content.startsWith(prefix + "move")) {
    if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
@@ -61,7 +61,7 @@ client.on('message', message => {
 	  
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`__**From**__' + chan2 + '**__ **To** __**' + chan + '**__');
+    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`**__ **To** __**' + chan + '**__');
     mention.setVoiceChannel(chan)
    
    
