@@ -58,10 +58,10 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + "move")) {
    if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
    if (!mention) return message.reply("__**العضو غير محدد**__");
-	  
+   var chan2 = mention.voiceChannel;	  
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`**__ **To** __**' + chan + '**__');
+    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + ' `**__ **To**  __** ' + chan + '**__');
     mention.setVoiceChannel(chan)
    
    
