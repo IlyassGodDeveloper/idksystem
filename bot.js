@@ -62,7 +62,7 @@ client.on('message', message => {
      if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + ' `**From**' + chan2  + '  **To**  __** ' + chan + '**__');
+    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + ' `** From **``' + chan2  + '``  ** To **  __** ``' + chan + '``**__');
     mention.setVoiceChannel(chan)
    
    
