@@ -51,11 +51,11 @@ if (message.content.startsWith(prefix + 'setgame')) {
 });
 
 client.on('message', message => {
-  
+  var mention = message.mentions.members.first();
+   var chan = message.member.voiceChannel;
   if (message.content.startsWith(prefix + "move")) {
    if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("**``ĮDK-Move`` ليس لديك رول**");
-   var mention = message.mentions.members.first();
-   var chan = message.member.voiceChannel;
+   if (!mention) return message.reply("__**العضو غير محدد**__");
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
     log.send("'``' + message.author.username + '``''**' Moved '**' '``' + mention.displayName + '``''**' to'**' '__**' +  chan +'**__'");
