@@ -53,7 +53,7 @@ if (message.content.startsWith(prefix + 'setgame')) {
 const queue = new Map();
 client.on('ready', function() {
 	console.log(`i am ready ${client.user.username}`);
-    client.user.setGame(prefix + 'help | .Ramadan Karim 🌙',"https://www.twitch.tv/peery13");
+    client.user.setGame(prefix + 'help | رمضان كريم 🌙',"https://www.twitch.tv/peery13");
 });
 
 
