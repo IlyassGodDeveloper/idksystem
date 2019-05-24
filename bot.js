@@ -49,6 +49,15 @@ if (message.content.startsWith(prefix + 'setgame')) {
 
 
 });
+/////////////////////////////////////////////////
+const queue = new Map();
+client.on('ready', function() {
+	console.log(`i am ready ${client.user.username}`);
+    client.user.setGame(prefix + 'help | .Ramadan Karim 🌙',"https://www.twitch.tv/peery13");
+});
+
+
+////////////////////////////////////////
 
 client.on('message', message => {
   var mention = message.mentions.members.first();
@@ -69,13 +78,31 @@ client.on('message', message => {
   }
     
 });
+//////////////////////////////////////////////////////////////////////
 
-
-const queue = new Map();
-client.on('ready', function() {
-	console.log(`i am ready ${client.user.username}`);
-    client.user.setGame(prefix + 'help | .Ramadan Karim 🌙',"https://www.twitch.tv/peery13");
+client.on('message', message => {
+  var mention = message.mentions.members.first();
+   var chan = message.member.voiceChannel;
+	
+	
+  if (message.content.startsWith(prefix + "goto")) {
+   if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
+   if (!mention) return message.reply("__**العضو غير محدد**__");
+   var chan2 = mention.voiceChannel;
+     if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
+    console.log('hi')
+    let log = message.guild.channels.find( channel => channel.name === "move-log");
+    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
+    message.member.setVoiceChannel(chan2)
+   
+   
+  }
+    
 });
+
+///////////////////////////////////////////////////////////////////
+
+
 
 
 
