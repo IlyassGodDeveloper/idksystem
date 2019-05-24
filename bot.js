@@ -121,6 +121,7 @@ client.on("message", message => {
          ${prefix}ban  : حظر العضو من السيرفر
          ${prefix}kick : طرد العضو من السيرفر
          ${prefix}move : نقل العضو إلى الروم الصوتية
+         ${prefix}goto :  إنتقال إلى عضو في روم صوتية
          ${prefix}clear: مسح الشات
          ${prefix}createroles : عمل رتب متكاملة للسيرفر
          ${prefix}voicesetup : انشاء روم فويس اونلاين
