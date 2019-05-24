@@ -80,25 +80,6 @@ client.on('message', message => {
 });
 //////////////////////////////////////////////////////////////////////
 
-client.on('message', message => {
-  var mention = message.mentions.members.first();
-   var chan = message.member.voiceChannel;
-	
-	
-  if (message.content.startsWith(prefix + "goto")) {
-   if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
-   if (!mention) return message.reply("__**العضو غير محدد**__");
-   var chan2 = mention.voiceChannel;
-     if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
-    console.log('hi')
-    let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + ':`** **{'+ chan + '}** __**Teleported TO**__ **`' + mention.displayName + ':`** **{' + chan2 + '}**');
-    message.member.setVoiceChannel(chan2)
-   
-   
-  }
-    
-});
 
 ///////////////////////////////////////////////////////////////////
 
@@ -120,8 +101,7 @@ client.on("message", message => {
          ------------------------------
          ${prefix}ban  : حظر العضو من السيرفر
          ${prefix}kick : طرد العضو من السيرفر
-         ${prefix}move : نقل العضو إلى الروم الصوتية
-         ${prefix}goto :  إنتقال إلى عضو في روم صوتية
+         ${prefix}move : نقل العضو إلى الروم الصوتي
          ${prefix}clear: مسح الشات
          ${prefix}createroles : عمل رتب متكاملة للسيرفر
          ${prefix}voicesetup : انشاء روم فويس اونلاين
