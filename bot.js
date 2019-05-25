@@ -69,7 +69,7 @@ client.on('message', message => {
    if (!mention) return message.reply("__**العضو غير محدد**__");
    var chan2 = mention.voiceChannel;
      if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
-	  if (!chan2.joinable) return message.reply("__** ليس لديك صلاحية لسحب العضو من تلك القناة **__")
+	  if (!chan2.joinable) return message.reply("__** ليس لديك صلاحية لسحب العضو من تلك القناة **__");
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
     log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
