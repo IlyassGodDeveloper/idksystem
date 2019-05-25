@@ -69,11 +69,11 @@ client.on('message', message => {
    if (!mention) return message.reply("__**العضو غير محدد**__");
    var chan2 = mention.voiceChannel;
      if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
-	 let whitelisted = [];
-        let members = message.guild.members.array();
+	
+        var members = message.guild.members.array();
 
         for (var i = 0; i < members.length; i++) {
-       if (mention.member.voiceChannel.permissionsFor(members[i]).has('CONNECT') === false ) whitelisted.push(`<@${members[i].id}>`) return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
+       if (mention.member.voiceChannel.permissionsFor(members[i]).has('CONNECT') === false ) ) return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
 		
        }
     console.log('hi')
