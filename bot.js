@@ -74,7 +74,7 @@ client.on('message', message => {
     let log = message.guild.channels.find( channel => channel.name === "move-log");
     log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
     mention.setVoiceChannel(chan)
-   message.channel.send("**:white_check_mark:**"+mention.displayName+"**moved to**"+chan)
+   message.channel.send("** :white_check_mark: **"+mention.displayName+"** moved to **"+chan)
    
   }
     
