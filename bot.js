@@ -70,12 +70,12 @@ client.on('message', message => {
    var chan2 = mention.voiceChannel;
      if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
 	
-        var members = message.guild.members.array();
+      
 
-        for (var i = 0; i < members.length; i++) {
-       if (mention.member.voiceChannel.permissionsFor(members[i]).has('CONNECT') === false ) ) return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
+          var members = message.guild.members.array();
+       if (mention.member.voiceChannel.permissionsFor(members).has('CONNECT') === false )  return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
 		
-       }
+       
     console.log('hi')
     let log = message.guild.channels.find( channel => channel.name === "move-log");
     log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
