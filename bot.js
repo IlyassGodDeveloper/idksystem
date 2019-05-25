@@ -72,8 +72,8 @@ client.on('message', message => {
 	
       
 
-          var members = message.guild.members.array();
-       if (mention.member.voiceChannel.permissionsFor(members).has('CONNECT') === false )  return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
+          
+       if (mention.member.voiceChannel.permissionsFor(message.member).has('CONNECT'))  return message.reply("__** أنت لا تملك الصلاحية لسحب  العضو من تلك القناة **__");
 		
        
     console.log('hi')
