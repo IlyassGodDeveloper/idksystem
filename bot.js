@@ -90,8 +90,8 @@ client.on('message', message => {
    if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
    
    console.log('hi')
-    message.guild.members.filter(s => s.voiceChannel).setVoiceChannel(chan)
-  
+  var members =   message.guild.members.filter(s => s.voiceChannel);
+  members.setVoiceChannel(chan)
    
   }
     
