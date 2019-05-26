@@ -86,16 +86,12 @@ client.on('message', message => {
    var chan = message.member.voiceChannel;
 	
 	
-  if (message.content.startsWith(prefix + "move")) {
+  if (message.content.startsWith(prefix + "moveall")) {
    if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
    
-   
-
-    console.log('hi')
-    let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
-    message.guild.members.setVoiceChannel(chan)
-   message.channel.send(" :white_check_mark:  ``"+mention.displayName+"`` ** moved to ** __**"+chan+"**__")
+   console.log('hi')
+    message.guild.members.filter(s => s.voiceChannel).setVoiceChannel(chan)
+  
    
   }
     
