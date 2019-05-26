@@ -81,21 +81,7 @@ client.on('message', message => {
 });
 //////////////////////////////////////////////////////////////////////
 
-client.on('message', message => {
- 
-   var chan = message.member.voiceChannel;
-	
-	
-  if (message.content.startsWith(prefix + "moveall")) {
-   if(!message.member.roles.find(role => role.name === "IDK-Move")) return message.reply("__**``ĮDK-Move`` ليس لديك رول**__");
-   
-   console.log('hi');
-   message.guild.members.setVoiceChannel(chan);
-  
-   
-  }
-    
-});
+
 ///////////////////////////////////////////////////////////////////
 
 
