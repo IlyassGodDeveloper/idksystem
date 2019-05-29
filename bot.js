@@ -71,8 +71,7 @@ client.on('message', message => {
      if (!chan2) return message.reply("__**العضو غير موجود في قناة صوتية**__");
 
     console.log('hi')
-    let log = message.guild.channels.find( channel => channel.name === "move-log");
-    log.send('**`' + message.author.username + '`** ** Moved ** **`' + mention.displayName + '`** ** From ** __**{' + chan2  + '}**__  **`` To ``**  __**{' + chan + '}**__');
+    
     mention.setVoiceChannel(chan)
    message.channel.send(" :white_check_mark:  ``"+mention.displayName+"`` ** moved to ** __**"+chan+"**__")
    
