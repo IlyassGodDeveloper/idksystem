@@ -318,7 +318,7 @@ if (message.content.startsWith(prefix+"cv")) {
 });
 client.on('message', message => {
   if (true) {
-if (message.content === '_inv') {
+if (message.content === '+inv') {
       message.author.send('https://discordapp.com/api/oauth2/authorize?client_id=449359611036827663&permissions=8&scope=bot').catch(e => console.log(e.stack));
 
     }
