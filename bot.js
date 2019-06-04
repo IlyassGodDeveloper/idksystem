@@ -460,8 +460,8 @@ client.on('message', async message => {
 
 
 client.on("guildMemberAdd", memb => {
-        if(memb.guild.id === "560946822005129219") {  // ايدي السيرفر
-  const channel = memb.guild.channels.find('id', '567719741305651202'); //ايدي الروم
+        if(memb.guild.id === "482712049621925908") {  // ايدي السيرفر
+  const channel = memb.guild.channels.find('id', '570760838600851497'); //ايدي الروم
 if (!channel) return;
 channel.send(`**<@${memb.user.id}> Welcome To Í.Ð.Ķ Family  ** ❤️ `)  
 
