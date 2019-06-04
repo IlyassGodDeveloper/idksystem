@@ -464,8 +464,7 @@ client.on("guildMemberAdd", memb => {
   const channel = memb.guild.channels.find('id', '567719741305651202'); //ايدي الروم
 if (!channel) return;
 channel.send(`**<@${memb.user.id}> Welcome To Í.Ð.Ķ Family  ** ❤️ `)  
-const role = memb.guild.roles.find('name', 'Test Bot');
-memb.member.addRole(role);
+
 }});
 
 
