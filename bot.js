@@ -459,11 +459,13 @@ client.on('message', async message => {
 
 
 
-client.on("guildMemberAdd", member => {
-        if(member.guild.id === "482712049621925908") {  // ايدي السيرفر
-  const channel = member.guild.channels.find('id', '570760838600851497'); //ايدي الروم
+client.on("guildMemberAdd", mem => {
+        if(mem.guild.id === "482712049621925908") {  // ايدي السيرفر
+  const channel = mem.guild.channels.find('id', '570760838600851497'); //ايدي الروم
 if (!channel) return;
-channel.send(`**<@${member.user.id}> Welcome To Í.Ð.Ķ Family  ** ❤️ `)  
+channel.send(`**<@${mem.user.id}> Welcome To Í.Ð.Ķ Family  ** ❤️ `)  ;
+var role = mem.guild.roles.find(role => role.name === "ĮƊƘ-Family");
+mem.member.addRole(role);
 }});
 
 
